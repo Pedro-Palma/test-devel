@@ -12,6 +12,7 @@ router
 .get('/question/:id',ensureAuth,question.getQuestionId)
 .put('/question',ensureAuth,question.updateQuestion)
 .delete('/question',ensureAuth,question.deleteQuestion)
+.get('/pollQuestions/:id',question.getQuestionPoll)
 
 
 

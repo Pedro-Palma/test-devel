@@ -103,3 +103,18 @@ export const updateQuestion = async (req:Request, res:Response) => {
     }
   }
 
+  export const getQuestionPoll = async (req: Request, res: Response) => {
+    try {
+        const { id } = req.params;
+        const question = await Question.query().where({idPoll:id});
+        if (question.length <= 0)
+            return res
+                .status(500)
+                .json({ message: "There is no questions of the poll" });
+
+        return res.status(200).json({ question })
+
+    } catch (err) {
+        return res.status(500).json(err);
+    }
+};
