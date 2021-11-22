@@ -1,4 +1,4 @@
-import  Joi, { required } from "@hapi/joi"
+import  Joi from "@hapi/joi"
 
 export const pollSchema = Joi.object({
     name: Joi.string().required(),
