@@ -5,7 +5,7 @@ El API realizada cumple con las funciones requeridas para el manejo de encuestas
 
 Para poder ejecutar el proyecto debe clonar el repositorio.
 
-## 
+## Configuración
 
 Base de datos `sql server`
 
