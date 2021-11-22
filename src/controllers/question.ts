@@ -10,12 +10,13 @@ export const addQuestion = async (req: Request, res: Response) => {
                 .status(400)
                 .json(error['details'][0]['message']);
 
-        const { name,title,id } = req.body;
+        const { name,title,id,idType} = req.body;
 
         const newQuestion = await Question.query().insert({
             name:name,
             title:title,
-            idPoll:id
+            idPoll:id,
+            idType:idType
 
         });
         return res.status(201).json({newQuestion});
@@ -65,12 +66,13 @@ export const updateQuestion = async (req:Request, res:Response) => {
               .status(400)
               .json(error['details'][0]['message']);  
 
-              const {title,name,id} = req.body;
+              const {title,name,id,idType} = req.body;
   
       const newQuestion = await Question.query().findById(id).patch({ 
         name:name,
         title:title,
-        idPoll:id
+        idPoll:id,
+        idType:idType
     })
   
       if(!newQuestion) return res
